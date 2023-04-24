@@ -138,7 +138,7 @@ header h3 {
 }
 
 #block-get-help i {
-    color: #833;
+    color: #789;
 }
 
 #block-get-involved i {
@@ -149,7 +149,31 @@ header h3 {
     color: #338;
 }
 
+#block-contact-info {
+    line-height: 0px;
+}
+
+#block-contact-info h3 {
+    margin: auto;
+}
+
+#block-contact-info h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#block-contact-info p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+#block-location i {
+    color: #833;
+}
+
 .block button {
+    width: 350px;
     border: none;
     background-color: #fffc;
     border-radius: 25px;
@@ -161,3 +185,9 @@ header h3 {
     font-size: 16px;
 }
 
+#gmap {
+    width: 300px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
