@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --bg-color: #F1F1F1;
+    --primary: #DB7525;
+    --navy: #000080;
+}
+body {
+    background-color: var(--bg-color);
+  }
+h1 {
+    font-size: 3rem;
+  }
+   /* GCA logo links to home page */
+img {
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        padding: 5px;
+        width: 150px;
+   }
+h2 {
+    font-size: 3rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color);
+    color: var(--primary);
+}
+.contacticons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+  }
+  .contacticons h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+  }
+  .contacticons h2 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    color: var(--primary);
+    background-color: var(--bg-color);
+    margin: 0.5em;
+    border: 2px solid var(--navy);
+    border-radius: 20px;
+  }
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* trying to center map */
+#mymap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    margin: 2em 0;
+  }
+  div h2 a {
+    padding: 10px;
+    border: 10px solid var(--navy);
+    border-radius: 20px;
+    font-size: 1em;
+ }
+ p {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    text-emphasis: bold;
+ }
+ /* probably need new image and some text info here. Maybe also some .  */
+ .image {
+    background-image: url(./Images/foodinwarehouse.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
