@@ -27,7 +27,6 @@ const hNavTop = document.querySelector('#h-navbar-top')
 const hNavLogo = document.querySelector('#h-navbar-logo')
 const listTitle = document.querySelectorAll('.list-title')
 const listContent = document.querySelectorAll('.list-content')
-const listContentItems = document.querySelectorAll('.list-content-items')
 const searchbar = document.querySelector('#searchbar')
 
 hNav.addEventListener('mouseover', ()=>{
@@ -55,11 +54,6 @@ listTitle.forEach(list => {
                 hNav.classList.remove('h-navbar-pos')
                 hNav.classList.add('h-navbar-slide')
                 
-            })
-            listContentItems.forEach(selection =>{
-                selection.addEventListener('mouseover', ()=>{
-                    selection.parentNode.classList.add('orange-bg')
-                })
             })
         })
     })
