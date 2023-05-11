@@ -42,79 +42,32 @@ hNav.addEventListener('mouseleave', ()=>{
     }
 });
 
-listTitle.forEach(list => {
-    const selectedList = list.nextElementSibling;
-    list.addEventListener('mouseover', ()=>{
-        listContent.forEach(item => {
-            selectedList.classList.add('content-display')
-            list.classList.add('orange-bg')
-            item.addEventListener('mouseover', ()=>{
-                item.classList.add('content-display')
-                item.classList.add('orange-bg')
-                // item.classList.add('list-white')
-                hNav.classList.remove('h-navbar-pos')
-                hNav.classList.add('h-navbar-slide')
-                
+listTitle.forEach(title=>{
+    title.addEventListener('mouseover', ()=>{
+        const titleChild = title.firstElementChild
+        titleChild.classList.add('content-display')
+        listContent.forEach(list=>{
+            // list.parentNode.classList.add('content-display')
+            title.classList.add('orange-bg')
+            list.addEventListener('mouseover', ()=>{
+                list.classList.add('content-display')
             })
-            listContentItems.forEach(selection =>{
-                selection.addEventListener('mouseover', ()=>{
-                    selection.parentNode.classList.add('orange-bg')
-                })
-            })
+
         })
     })
-    list.addEventListener('mouseleave', ()=>{
-        listContent.forEach(item => {
-            selectedList.classList.remove('content-display')
-            list.classList.remove('orange-bg')
-            item.addEventListener('mouseleave', ()=>{
-                item.classList.remove('content-display')
-                item.classList.remove('orange-bg')
-                if (!searchbar.matches(':focus')){
-                hNav.classList.add('h-navbar-pos')
-                hNav.classList.remove('h-navbar-slide')
-            }
+    title.addEventListener('mouseleave', ()=>{
+        const titleChild = title.firstElementChild
+        titleChild.classList.remove('content-display')
+        listContent.forEach(list=>{
+            // list.parentNode.classList.remove('content-display')
+            title.classList.remove('orange-bg')
+            list.addEventListener('mouseleave', ()=>{
+                list.classList.remove('content-display')
             })
+
         })
     })
-});
-
-// const hNav = document.querySelector('#horizontal-navbar');
-// const hNavTop = document.querySelector('#h-navbar-top');
-// const hNavLogo = document.querySelector('#h-navbar-logo');
-// const listTitle = document.querySelectorAll('.list-title');
-// const listContent = document.querySelectorAll('.list-content');
-// const searchbar = document.querySelector('#searchbar');
-
-// hNav.addEventListener('mouseover', () => {
-//   hNav.classList.remove('h-navbar-pos');
-//   hNav.classList.add('h-navbar-slide');
-// });
-
-// hNav.addEventListener('mouseleave', () => {
-//   if (!searchbar.matches(':focus')) {
-//     hNav.classList.add('h-navbar-pos');
-//     hNav.classList.remove('h-navbar-slide');
-//   }
-// });
-
-// listTitle.forEach((list) => {
-//   const currentListContent = list.nextElementSibling;
-
-//   list.addEventListener('mouseover', () => {
-//     currentListContent.classList.add('content-display');
-//     hNav.classList.remove('h-navbar-pos');
-//     hNav.classList.add('h-navbar-slide');
-//   });
-
-//   list.addEventListener('mouseleave', () => {
-//     currentListContent.classList.remove('content-display');
-//     if (!searchbar.matches(':focus')) {
-//       hNav.classList.add('h-navbar-pos');
-//       hNav.classList.remove('h-navbar-slide');
-//     }
-//   });
-// });
+})
 
 searchbar.addEventListener('focus', () => {
     hNav.classList.add('h-navbar-slide');
