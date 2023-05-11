@@ -1,17 +1,17 @@
 // #region NAVBAR
-const openBtn = document.querySelector('.open-btn');
-const closeBtn = document.querySelector('.close-btn');
-const nav = document.querySelectorAll('.nav');
-const slide = document.querySelector('.slide-out');
+const openBtn = document.querySelector(".open-btn");
+const closeBtn = document.querySelector(".close-btn");
+const nav = document.querySelectorAll(".nav");
+const slide = document.querySelector(".slide-out");
 
-openBtn.addEventListener('click', () => {
-    if (!openBtn.classList.contains('slide-out')){
-        nav.forEach(navEl => navEl.classList.add('visible'));
-        openBtn.classList.add('slide-out');
-    } else {
-        nav.forEach(navEl => navEl.classList.remove('visible'));
-        openBtn.classList.remove('slide-out');
-    }
+openBtn.addEventListener("click", () => {
+  if (!openBtn.classList.contains("slide-out")) {
+    nav.forEach((navEl) => navEl.classList.add("visible"));
+    openBtn.classList.add("slide-out");
+  } else {
+    nav.forEach((navEl) => navEl.classList.remove("visible"));
+    openBtn.classList.remove("slide-out");
+  }
 });
 
 // closeBtn.addEventListener('click', () => {
@@ -22,101 +22,84 @@ openBtn.addEventListener('click', () => {
 
 // #region HORIZONTAL NAVBAR
 
-const hNav = document.querySelector('#horizontal-navbar')
-const hNavTop = document.querySelector('#h-navbar-top')
-const hNavLogo = document.querySelector('#h-navbar-logo')
-const listTitle = document.querySelectorAll('.list-title')
-const listContent = document.querySelectorAll('.list-content')
-const listContentItems = document.querySelectorAll('.list-content-items')
-const searchbar = document.querySelector('#searchbar')
+const hNav = document.querySelector("#horizontal-navbar");
+const hNavTop = document.querySelector("#h-navbar-top");
+const hNavLogo = document.querySelector("#h-navbar-logo");
+const listTitle = document.querySelectorAll(".list-title");
+const listContent = document.querySelectorAll(".list-content");
+const listContentItems = document.querySelectorAll(".list-content-items");
+const searchbar = document.querySelector("#searchbar");
 
-hNav.addEventListener('mouseover', ()=>{
-    hNav.classList.remove('h-navbar-pos')
-    hNav.classList.add('h-navbar-slide')
+hNav.addEventListener("mouseover", () => {
+  hNav.classList.remove("h-navbar-pos");
+  hNav.classList.add("h-navbar-slide");
+  hNavLogo.classList.add("h-navbar-logo-grow");
 });
 
-hNav.addEventListener('mouseleave', ()=>{
-    if (!searchbar.matches(':focus')){
-    hNav.classList.add('h-navbar-pos')
-    hNav.classList.remove('h-navbar-slide')
-    }
+hNav.addEventListener("mouseleave", () => {
+  if (!searchbar.matches(":focus")) {
+    setTimeout(() => {
+      hNav.classList.add("h-navbar-pos");
+      hNav.classList.remove("h-navbar-slide");
+      hNavLogo.classList.remove("h-navbar-logo-grow");
+    }, 1000);
+  }
 });
 
-listTitle.forEach(title=>{
-    title.addEventListener('mouseover', ()=>{
-        const titleChild = title.firstElementChild
-        titleChild.classList.add('content-display')
-        listContent.forEach(list=>{
-            // list.parentNode.classList.add('content-display')
-            title.classList.add('orange-bg')
-            list.addEventListener('mouseover', ()=>{
-                list.classList.add('content-display')
-            })
-
-        })
-    })
-    title.addEventListener('mouseleave', ()=>{
-        const titleChild = title.firstElementChild
-        titleChild.classList.remove('content-display')
-        listContent.forEach(list=>{
-            // list.parentNode.classList.remove('content-display')
-            title.classList.remove('orange-bg')
-            list.addEventListener('mouseleave', ()=>{
-                list.classList.remove('content-display')
-            })
-
-        })
-    })
-})
-
-searchbar.addEventListener('focus', () => {
-    hNav.classList.add('h-navbar-slide');
-    hNav.classList.remove('h-navbar-pos');
+listTitle.forEach((title) => {
+  title.addEventListener("mouseover", () => {
+    const titleChild = title.firstElementChild;
+    titleChild.classList.add("content-display");
+    listContent.forEach((list) => {
+      title.classList.add("orange-bg");
+      list.addEventListener("mouseover", () => {
+        list.classList.add("content-display");
+      });
+    });
   });
-  
-  searchbar.addEventListener('blur', () => {
-    hNav.classList.remove('h-navbar-slide');
-    hNav.classList.add('h-navbar-pos');
+  title.addEventListener("mouseleave", () => {
+    const titleChild = title.firstElementChild;
+    titleChild.classList.remove("content-display");
+    listContent.forEach((list) => {
+      title.classList.remove("orange-bg");
+      list.addEventListener("mouseleave", () => {
+        list.classList.remove("content-display");
+      });
+    });
   });
+});
+
+searchbar.addEventListener("focus", () => {
+  hNav.classList.add("h-navbar-slide");
+  hNav.classList.remove("h-navbar-pos");
+});
+
+searchbar.addEventListener("blur", () => {
+  hNav.classList.remove("h-navbar-slide");
+  hNav.classList.add("h-navbar-pos");
+});
 
 // #endregion
 
-// #region NAVBAR ACCORDIAN
-const toggleBtn = document.querySelectorAll('.dropdown-title');
-const toggleBtnParents = document.querySelectorAll('.dropdown');
+// #region NAVBAR ACCORDION
+const toggleBtn = document.querySelectorAll(".dropdown-title");
+const toggleBtnParents = document.querySelectorAll(".dropdown");
 
-toggleBtn.forEach(btn => {
-    btn.addEventListener('click', ()=>{
-        btn.parentNode.classList.toggle('active')
-    })
+toggleBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.parentNode.classList.toggle("active");
+  });
 });
-    
-
-
 
 // #endregion
 
 // #region HEADER PARALLAX
-document.body.onscroll = function headerParallax() {  
-    let scrolling = document.scrollingElement.scrollTop;
-    let headerIMG = document.getElementById("header-img");
-    let xPos = "70%";
-    let factor = .30;
-    let yPos = (scrolling - 1400) * factor;
-    headerIMG.style.backgroundPosition = xPos + " " + yPos + "px";
-  }
+document.body.onscroll = function headerParallax() {
+  let scrolling = document.scrollingElement.scrollTop;
+  let headerIMG = document.getElementById("header-img");
+  let xPos = "70%";
+  let factor = 0.3;
+  let yPos = (scrolling - 1400) * factor;
+  headerIMG.style.backgroundPosition = xPos + " " + yPos + "px";
+};
 // #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
