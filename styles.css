@@ -388,28 +388,8 @@ a {
   color: var(--text-primary);
 }
 
-.h-navbar-logo-grow {
-  transform: scale(1);
-  transform: translate(-10rem, -5rem);
-  transition: transform 500ms;
-}
-
-#h-navbar-logo {
-  height: 15rem;
-  position: absolute;
-  left: 15rem;
-  transform: scale(0.4);
-  bottom: -5rem;
-  transition: transform 500ms;
-}
-
-#h-navbar-logo-bottom {
-  height: 5rem;
-  position: static;
-}
-
 .h-navbar-pos {
-  transform: translateY(-11rem);
+  /* transform: translateY(-11rem); */
   transition: transform 500ms;
 }
 
@@ -420,7 +400,7 @@ a {
 
 #h-navbar-content-container {
   height: 100%;
-  width: 65%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -431,7 +411,12 @@ a {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+#resources {
+    width: fit-content;
+    margin-right: -30rem;
 }
 
 #resources a h5 {
@@ -461,8 +446,26 @@ a {
   height: 5rem;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+}
+
+.h-navbar-logo-grow {
+    transform: scale(1);
+    transform: translate(-10rem, -5rem);
+    transition: transform 500ms;
+  }
+  
+#h-navbar-logo-top {
+height: 15rem;
+transform: scale(0.4);
+transition: transform 500ms;
+}
+
+#h-navbar-logo-bottom {
+height: 15rem;
+transform: scale(0.4);
+transition: transform 500ms;
 }
 
 .title-list-container {
@@ -483,6 +486,7 @@ a {
 #h-navbar-bottom a {
   font-size: 3rem;
   font-weight: 400;
+  width: fit-content;
 }
 
 #h-navbar-bottom ul li {
