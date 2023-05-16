@@ -29,22 +29,40 @@ const listTitle = document.querySelectorAll(".list-title");
 const listContent = document.querySelectorAll(".list-content");
 const listContentItems = document.querySelectorAll(".list-content-items");
 const searchbar = document.querySelector("#searchbar");
+const topLogo = document.querySelector("#h-navbar-logo-top");
+const bottomLogo = document.querySelector("#h-navbar-logo-bottom");
 
-// hNav.addEventListener("mouseover", () => {
-//   hNav.classList.remove("h-navbar-pos");
-//   hNav.classList.add("h-navbar-slide");
-//   hNavLogo.classList.add("h-navbar-logo-grow");
-// });
+logoSize = () =>{
+  if (hNav.classList.contains('h-navbar-slide')){
+    bottomLogo.className = 'logo-grow';
+  } else {
+    bottomLogo.className = 'logo-shrink';
+  }
+}
 
-// hNav.addEventListener("mouseleave", () => {
-//   if (!searchbar.matches(":focus")) {
-//     setTimeout(() => {
-//       hNav.classList.add("h-navbar-pos");
-//       hNav.classList.remove("h-navbar-slide");
-//       hNavLogo.classList.remove("h-navbar-logo-grow");
-//     }, 1000);
-//   }
-// });
+hNav.addEventListener("mouseover", () => {
+  hNav.classList.remove("h-navbar-pos");
+  hNav.classList.add("h-navbar-slide");
+  logoSize();
+  // bottomLogo.classList.remove('logo-shrink');
+  // bottomLogo.classList.add('logo-grow');
+  // hNavLogo.classList.add("h-navbar-logo-grow");
+});
+
+hNav.addEventListener("mouseleave", () => {
+  if (!searchbar.matches(":focus")) {
+    setTimeout(() => {
+      hNav.classList.add("h-navbar-pos");
+      hNav.classList.remove("h-navbar-slide");
+      logoSize();
+      // bottomLogo.classList.add('logo-shrink')
+      // bottomLogo.classList.remove('logo-grow')
+      // hNavLogo.classList.remove("h-navbar-logo-grow");
+    }, 1000);
+  }
+});
+
+
 
 listTitle.forEach((title) => {
   title.addEventListener("mouseover", () => {
@@ -69,15 +87,17 @@ listTitle.forEach((title) => {
   });
 });
 
-// searchbar.addEventListener("focus", () => {
-//   hNav.classList.add("h-navbar-slide");
-//   hNav.classList.remove("h-navbar-pos");
-// });
+searchbar.addEventListener("focus", () => {
+  hNav.classList.add("h-navbar-slide");
+  hNav.classList.remove("h-navbar-pos");
+  logoSize();
+});
 
-// searchbar.addEventListener("blur", () => {
-//   hNav.classList.remove("h-navbar-slide");
-//   hNav.classList.add("h-navbar-pos");
-// });
+searchbar.addEventListener("blur", () => {
+  hNav.classList.remove("h-navbar-slide");
+  hNav.classList.add("h-navbar-pos");
+  logoSize();
+});
 
 // #endregion
 
