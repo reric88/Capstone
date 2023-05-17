@@ -1068,3 +1068,9 @@ footer .block a {
   color: var(--text-primary);
 }
 /* #endregion */
+
+@media (width < 1000px) {
+  * {
+    font-size: 45%;
+  }
+}
