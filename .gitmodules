@@ -1,0 +1,6 @@
+[submodule "FinalProject"]
+	path = FinalProject
+	url = https://github.com/jokeeley/FinalProject.git
+[submodule "capstoneproject2"]
+	path = capstoneproject2
+	url = https://github.com/keithroe6/capstoneproject2.git
