@@ -510,7 +510,7 @@ transition: transform 500ms;
 .list-title {
   padding: 1rem 2rem 0rem 2rem;
   border-radius: 1rem 1rem 0 0;
-  margin-bottom: 0;
+  margin-bottom: -.3rem;
   /* transform: translateY(.2rem); */
   cursor: pointer;
 }
@@ -532,7 +532,16 @@ transition: transform 500ms;
 .list-content {
   display: none;
   background-color: var(--primary);
+  box-shadow: 0 .3rem 1rem 0rem #1119;
+  z-index: -1;
 }
+
+/* .list-content::before {
+  content: '';
+  box-shadow: 0 1rem 1rem 0rem black;
+  z-index: -1;
+
+} */
 
 .no-display {
   display: none;
